@@ -20,7 +20,7 @@ def trip_calculator():
     total_people = students + teachers
 
     if transport == "Автобус":
-        count_bus = math.ceil(total_people / 40)  # 1 автобус на 40 місць
+        count_bus = math.ceil(total_people / 40)
         transport_price = count_bus * 5000
     else:
         count_bus = 0
@@ -34,7 +34,7 @@ def trip_calculator():
     total_sum = transport_price + hotel_price
 
     if total_people > 30:
-        total_sum = total_sum * 0.9  # мінус 10%
+        total_sum = total_sum * 0.9
 
     put_markdown("### Підсумок:")
     put_text(f"Всього людей: {total_people}")
