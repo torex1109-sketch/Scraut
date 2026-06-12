@@ -1,16 +1,25 @@
-from poems import VERSE1
-from sign import HOMEWORK
-from poems import VERSE2
-name = "Рома"
-homework = HOMEWORK.format(name=name)
-print(homework)
+import utils
 
-wish = 'Цікаві заняття \n Багато практики!!'
-print(wish)
 
-stars = "**************************************************************************"
-print(stars)
-print(VERSE1)
-print(stars)
-print(VERSE2)
-print(stars)
+def main():
+    trip_data = {
+        'name': 'Akim',
+        'date': '05.06.2026',
+        'persons': 6,
+        'price_per_person': 6000054,
+        'total_price': 6000,
+        'discount': 0,
+        'final_price': 6000
+    }
+    mail_body = utils.create_trip_info(trip_data)
+    print(mail_body)
+
+    utils.send_email(
+        recipients=['test_hillel_api_mailing@ukr.net', 'awa123awa@ukr.net'],
+        mail_body=mail_body,
+        mail_subject=f'Trip data - total={trip_data["final_price"]}',
+        # attachment='2026-04-03_20-10.png'
+    )
+
+
+main()
